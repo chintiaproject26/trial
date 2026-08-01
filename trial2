@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chintia Hermana | Community Manager & Operations Specialist</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Plus Jakarta Sans & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        nude: {
+                            50: '#FAF7F2',
+                            100: '#F5ECE3',
+                            200: '#E9DACB',
+                            300: '#D9C4B0',
+                            400: '#C5A992',
+                            500: '#B08F75',
+                            600: '#8E6E56',
+                            700: '#6C503C',
+                            800: '#4B3628',
+                            900: '#2E2017',
+                        },
+                        calm: {
+                            blue: '#7B9CB9',
+                            lightBlue: '#EAF0F6',
+                            rose: '#C48B71',
+                            softRose: '#F7EDE8',
+                            sage: '#8DA399',
+                            dark: '#2A2725',
+                            muted: '#6E6763'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #FAF7F2;
+            color: #2A2725;
+        }
+        
+        .font-serif-title {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(223, 212, 201, 0.6);
+        }
+
+        .glass-nav {
+            background: rgba(250, 247, 242, 0.90);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FAF7F2;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D9C4B0;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #B08F75;
+        }
+    </style>
+</head>
+<body class="antialiased text-calm-dark selection:bg-nude-200 selection:text-nude-800">
+
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300 border-b border-nude-200/60 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand / Logo -->
+            <a href="#hero" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full bg-calm-rose text-white flex items-center justify-center font-serif font-bold text-lg shadow-sm group-hover:scale-105 transition-transform">
+                    CH
+                </div>
+                <div>
+                    <span class="font-serif-title font-semibold text-lg text-calm-dark block leading-none">Chintia Hermana</span>
+                    <span class="text-xs text-calm-rose font-medium tracking-wide">Community & Operations</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-calm-muted">
+                <a href="#about" class="hover:text-calm-rose transition-colors">Tentang</a>
+                <a href="#skills" class="hover:text-calm-rose transition-colors">Keahlian & Tools</a>
+                <a href="#experience" class="hover:text-calm-rose transition-colors">Pengalaman</a>
+                <a href="#certifications" class="hover:text-calm-rose transition-colors">Sertifikasi</a>
+                <a href="#contact" class="hover:text-calm-rose transition-colors">Kontak</a>
+            </nav>
+
+            <!-- Header Action Buttons -->
+            <div class="hidden md:flex items-center space-x-4">
+                <button id="langToggleBtn" onclick="toggleLanguage()" class="px-3.5 py-1.5 rounded-full border border-nude-300 text-xs font-semibold text-calm-dark hover:bg-nude-100 transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-globe text-calm-rose"></i>
+                    <span id="langLabel">ID / EN</span>
+                </button>
+                <a href="https://wa.me/6285811622792" target="_blank" class="px-5 py-2.5 rounded-full bg-calm-rose text-white text-sm font-medium hover:bg-nude-600 transition-all shadow-sm hover:shadow-md flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>Diskusi Kerjasama</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg text-calm-dark hover:bg-nude-100 focus:outline-none">
+                <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobileMenu" class="hidden md:hidden glass-card border-t border-nude-200 px-6 py-6 space-y-4 shadow-lg">
+            <a href="#about" onclick="toggleMobileMenu()" class="block text-base font-medium text-calm-dark hover:text-calm-rose py-1">Tentang</a>
+            <a href="#skills" onclick="toggleMobileMenu()" class="block text-base font-medium text-calm-dark hover:text-calm-rose py-1">Keahlian & Tools</a>
+            <a href="#experience" onclick="toggleMobileMenu()" class="block text-base font-medium text-calm-dark hover:text-calm-rose py-1">Pengalaman</a>
+            <a href="#certifications" onclick="toggleMobileMenu()" class="block text-base font-medium text-calm-dark hover:text-calm-rose py-1">Sertifikasi</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block text-base font-medium text-calm-dark hover:text-calm-rose py-1">Kontak</a>
+            <div class="pt-4 border-t border-nude-200 flex flex-col gap-3">
+                <a href="https://wa.me/6285811622792" target="_blank" class="w-full text-center py-2.5 rounded-full bg-calm-rose text-white text-sm font-medium shadow-sm">
+                    <i class="fa-brands fa-whatsapp mr-2"></i>Hubungi via WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="hero" class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+        <!-- Soft decorative gradient background -->
+        <div class="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-gradient-to-tr from-nude-200/40 via-calm-lightBlue/30 to-calm-softRose/50 rounded-full blur-3xl -z-10"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Text Column -->
+                <div class="md:col-span-7 space-y-6 text-center md:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-nude-100 border border-nude-300 text-calm-rose text-xs font-semibold tracking-wide uppercase">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span data-id="hero-badge">Open for Remote & Project Collaboration</span>
+                    </div>
+
+                    <h1 class="font-serif-title text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-calm-dark">
+                        Mengakselerasi Komunitas & <span class="italic font-normal text-calm-rose">Efisiensi Operasional</span> Digital
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-calm-muted max-w-2xl font-normal leading-relaxed" data-id="hero-desc">
+                        Halo! Saya <strong class="text-calm-dark font-semibold">Chintia Hermana</strong>, seorang <em>Community Manager & Operations Specialist</em>. Berfokus pada pengembangan ekosistem digital, koordinasi kemitraan strategis, perancangan SOP terstruktur, dan strategi konten berorientasi dampak.
+                    </p>
+
+                    <!-- Key Action Buttons -->
+                    <div class="pt-2 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+                        <a href="#experience" class="w-full sm:w-auto px-7 py-3.5 rounded-full bg-calm-dark text-white text-sm font-medium hover:bg-calm-rose transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2">
+                            <span>Jelajahi Pengalaman</span>
+                            <i class="fa-solid fa-arrow-down text-xs"></i>
+                        </a>
+                        <button onclick="openCVModal()" class="w-full sm:w-auto px-7 py-3.5 rounded-full glass-card border border-nude-300 text-calm-dark text-sm font-medium hover:bg-nude-100 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-regular fa-file-lines text-calm-rose"></i>
+                            <span>Ringkasan CV (PDF)</span>
+                        </button>
+                    </div>
+
+                    <!-- Highlight Metrics -->
+                    <div class="pt-6 grid grid-cols-3 gap-3 border-t border-nude-200/80">
+                        <div class="p-3 rounded-xl bg-white/60 border border-nude-200/60 text-center md:text-left">
+                            <div class="text-2xl font-bold font-serif-title text-calm-rose">+30%</div>
+                            <div class="text-xs text-calm-muted font-medium">Community Growth</div>
+                        </div>
+                        <div class="p-3 rounded-xl bg-white/60 border border-nude-200/60 text-center md:text-left">
+                            <div class="text-2xl font-bold font-serif-title text-calm-rose">500+</div>
+                            <div class="text-xs text-calm-muted font-medium">Conference Audience</div>
+                        </div>
+                        <div class="p-3 rounded-xl bg-white/60 border border-nude-200/60 text-center md:text-left">
+                            <div class="text-2xl font-bold font-serif-title text-calm-rose">+78%</div>
+                            <div class="text-xs text-calm-muted font-medium">Organic Engagement</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Profile Image Column -->
+                <div class="md:col-span-5 flex justify-center relative">
+                    <div class="relative w-full max-w-sm sm:max-w-md">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-calm-rose/20 to-calm-blue/30 rounded-3xl transform rotate-3 scale-95 transition-transform"></div>
+                        
+                        <!-- Main Profile Image Container -->
+                        <div class="relative rounded-3xl overflow-hidden shadow-xl border-4 border-white/90 bg-nude-100 aspect-[4/5]">
+                            <img src="https://i.ibb.co/gLG47dys/Gemini-Generated-Image-tvdvi6tvdvi6tvdv.png" 
+                                 alt="Chintia Hermana - Community Manager" 
+                                 class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-500"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/600x700/E9DACB/4B3628?text=Chintia+Hermana';">
+                        </div>
+
+                        <!-- Floating Card 1 -->
+                        <div class="absolute -bottom-4 -left-4 glass-card p-3 sm:p-4 rounded-2xl shadow-lg flex items-center gap-3 border border-white/70 max-w-[220px]">
+                            <div class="w-10 h-10 rounded-xl bg-calm-blue/20 text-calm-blue flex items-center justify-center text-lg font-bold shrink-0">
+                                <i class="fa-solid fa-users-gear"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-semibold text-calm-dark">Community & Ops</p>
+                                <p class="text-[10px] text-calm-muted">Teman Kreativ & Mamakologi</p>
+                            </div>
+                        </div>
+
+                        <!-- Floating Card 2 -->
+                        <div class="absolute top-8 -right-4 glass-card p-3 rounded-2xl shadow-lg flex items-center gap-2.5 border border-white/70">
+                            <div class="w-8 h-8 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center text-sm">
+                                <i class="fa-solid fa-handshake"></i>
+                            </div>
+                            <div class="text-left">
+                                <p class="text-xs font-bold text-calm-dark">SMESCO Partner</p>
+                                <p class="text-[10px] text-calm-muted">National Event 500+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-white/60 border-y border-nude-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-semibold uppercase tracking-widest text-calm-rose">Tentang Saya</span>
+                <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-calm-dark mt-2">
+                    Harmoni Antara Empati Komunitas & Operasional Terstruktur
+                </h2>
+                <div class="w-12 h-0.5 bg-calm-rose mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Pillar 1 -->
+                <div class="glass-card p-8 rounded-2xl hover:border-calm-rose/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-calm-softRose text-calm-rose flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-diagram-project"></i>
+                    </div>
+                    <h3 class="font-serif-title text-xl font-bold text-calm-dark mb-3">SOP & Workflow Design</h3>
+                    <p class="text-sm text-calm-muted leading-relaxed">
+                        Merancang dan mengimplementasikan alur kerja internal untuk tim operasional komunitas, menciptakan eksekusi harian yang terstruktur, terukur, dan efisien.
+                    </p>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="glass-card p-8 rounded-2xl hover:border-calm-rose/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-calm-lightBlue text-calm-blue flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <h3 class="font-serif-title text-xl font-bold text-calm-dark mb-3">Community Engagement</h3>
+                    <p class="text-sm text-calm-muted leading-relaxed">
+                        Mengembangkan program keterlibatan interaktif seperti program *Member Reward Point*, meningkatkan partisipasi aktif anggota hingga 30% dalam waktu 3 bulan.
+                    </p>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="glass-card p-8 rounded-2xl hover:border-calm-rose/50 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center text-xl mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </div>
+                    <h3 class="font-serif-title text-xl font-bold text-calm-dark mb-3">Stakeholder Synergy</h3>
+                    <p class="text-sm text-calm-muted leading-relaxed">
+                        Pengalaman koordinasi lintas instansi (termasuk SMESCO Indonesia / LLP-KUKM) untuk mengeksekusi konferensi nasional berkhalayak 500+ peserta terdaftar.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Background Story Highlight -->
+            <div class="mt-12 p-8 rounded-2xl bg-nude-100 border border-nude-200 flex flex-col md:flex-row items-center gap-6">
+                <div class="w-14 h-14 rounded-full bg-white text-calm-rose flex items-center justify-center text-2xl shrink-0 shadow-sm">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div class="space-y-1 text-center md:text-left">
+                    <h4 class="font-bold text-calm-dark text-base">Latar Belakang Manajemen Pariwisata & Bisnis Digital</h4>
+                    <p class="text-sm text-calm-muted leading-relaxed">
+                        Lulusan <strong>Sekolah Tinggi Pariwisata Sahid Jakarta</strong> yang memadukan keahlian *hospitality* dan komunikasi manusiawi dengan standar manajemen bisnis pemasaran digital bersertifikasi BNSP. Mampu membangun koneksi yang hangat, suportif, dan profesional.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Header section: Description strictly BELOW heading -->
+            <div class="mb-12 text-left">
+                <span class="text-xs font-semibold uppercase tracking-widest text-calm-rose">Kompetensi Utama</span>
+                <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-calm-dark mt-2">
+                    Keahlian & Toolkit Kerja
+                </h2>
+                <p class="text-sm text-calm-muted max-w-2xl mt-3 leading-relaxed">
+                    Sinergi keahlian operasional komunitas, koordinasi acara, dan penguasaan tools produktivitas berbasis AI.
+                </p>
+            </div>
+
+            <!-- Core Strengths Grid -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-16">
+                <div class="p-5 rounded-xl bg-white border border-nude-200 shadow-sm hover:border-calm-rose transition-colors flex items-start gap-3">
+                    <i class="fa-solid fa-circle-check text-calm-rose mt-1"></i>
+                    <div>
+                        <h4 class="font-semibold text-calm-dark text-sm">Community Management & Engagement</h4>
+                        <p class="text-xs text-calm-muted mt-0.5">Strategi retensi, program loyalitas, & aktivasi member</p>
+                    </div>
+                </div>
+
+                <div class="p-5 rounded-xl bg-white border border-nude-200 shadow-sm hover:border-calm-rose transition-colors flex items-start gap-3">
+                    <i class="fa-solid fa-circle-check text-calm-rose mt-1"></i>
+                    <div>
+                        <h4 class="font-semibold text-calm-dark text-sm">SOP Development & Documentation</h4>
+                        <p class="text-xs text-calm-muted mt-0.5">Penyusunan panduan kerja & standardisasi alur eksekusi</p>
+                    </div>
+                </div>
+
+                <div class="p-5 rounded-xl bg-white border border-nude-200 shadow-sm hover:border-calm-rose transition-colors flex items-start gap-3">
+                    <i class="fa-solid fa-circle-check text-calm-rose mt-1"></i>
+                    <div>
+                        <h4 class="font-semibold text-calm-dark text-sm">Partnership & Event Coordination</h4>
+                        <p class="text-xs text-calm-muted mt-0.5">Koordinasi narasumber, kolaborasi brand, & acara nasional</p>
+                    </div>
+                </div>
+
+                <div class="p-5 rounded-xl bg-white border border-nude-200 shadow-sm hover:border-calm-rose transition-colors flex items-start gap-3">
+                    <i class="fa-solid fa-circle-check text-calm-rose mt-1"></i>
+                    <div>
+                        <h4 class="font-semibold text-calm-dark text-sm">Content Strategy & Social Media</h4>
+                        <p class="text-xs text-calm-muted mt-0.5">Riset tren, copywriting, & visual branding Instagram</p>
+                    </div>
+                </div>
+
+                <div class="p-5 rounded-xl bg-white border border-nude-200 shadow-sm hover:border-calm-rose transition-colors flex items-start gap-3">
+                    <i class="fa-solid fa-circle-check text-calm-rose mt-1"></i>
+                    <div>
+                        <h4 class="font-semibold text-calm-dark text-sm">Performance Analytics & Reporting</h4>
+                        <p class="text-xs text-calm-muted mt-0.5">Evaluasi metrik keterlibatan & laporan pertumbuhan</p>
+                    </div>
+                </div>
+
+                <div class="p-5 rounded-xl bg-white border border-nude-200 shadow-sm hover:border-calm-rose transition-colors flex items-start gap-3">
+                    <i class="fa-solid fa-circle-check text-calm-rose mt-1"></i>
+                    <div>
+                        <h4 class="font-semibold text-calm-dark text-sm">Remote Collaboration & Management</h4>
+                        <p class="text-xs text-calm-muted mt-0.5">Komunikasi asinkron & kerja terdistribusi efisien</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tools & AI Stack -->
+            <div class="glass-card p-8 rounded-2xl border border-nude-300">
+                <h3 class="font-serif-title text-xl font-bold text-calm-dark mb-6 text-center">Tools & Platform Ecosystem</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5 text-center">
+                    
+                    <div class="p-4 rounded-xl bg-white/80 border border-nude-200 flex flex-col items-center gap-2 hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-cubes text-2xl text-neutral-800"></i>
+                        <span class="text-xs font-semibold text-calm-dark">Notion</span>
+                        <span class="text-[10px] text-calm-muted">SOP & Documentation</span>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-white/80 border border-nude-200 flex flex-col items-center gap-2 hover:scale-105 transition-transform">
+                        <i class="fa-brands fa-meta text-2xl text-blue-600"></i>
+                        <span class="text-xs font-semibold text-calm-dark">Meta Suite</span>
+                        <span class="text-[10px] text-calm-muted">Social Management</span>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-white/80 border border-nude-200 flex flex-col items-center gap-2 hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-wand-magic-sparkles text-2xl text-purple-600"></i>
+                        <span class="text-xs font-semibold text-calm-dark">AI Tools</span>
+                        <span class="text-[10px] text-calm-muted">Claude, Gemini, ChatGPT</span>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-white/80 border border-nude-200 flex flex-col items-center gap-2 hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-palette text-2xl text-teal-600"></i>
+                        <span class="text-xs font-semibold text-calm-dark">Canva</span>
+                        <span class="text-[10px] text-calm-muted">Visual Content</span>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-white/80 border border-nude-200 flex flex-col items-center gap-2 hover:scale-105 transition-transform">
+                        <i class="fa-solid fa-video text-2xl text-zinc-800"></i>
+                        <span class="text-xs font-semibold text-calm-dark">CapCut</span>
+                        <span class="text-[10px] text-calm-muted">Short Video Edit</span>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-white/80 border border-nude-200 flex flex-col items-center gap-2 hover:scale-105 transition-transform">
+                        <i class="fa-brands fa-google text-2xl text-amber-500"></i>
+                        <span class="text-xs font-semibold text-calm-dark">Google Space</span>
+                        <span class="text-[10px] text-calm-muted">Docs, NotebookLM</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-20 bg-white/60 border-y border-nude-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-semibold uppercase tracking-widest text-calm-rose">Rekam Jejak Karir</span>
+                <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-calm-dark mt-2">
+                    Pengalaman Profesional & Hasil Nyata
+                </h2>
+                <p class="text-sm text-calm-muted mt-2">Pengalaman kerja remote dengan fokus pengembangan komunitas digital, kemitraan, & operasional.</p>
+            </div>
+
+            <!-- Experience Timeline -->
+            <div class="space-y-8 max-w-4xl mx-auto">
+
+                <!-- Role 1: Teman Kreativ -->
+                <div class="glass-card p-6 sm:p-8 rounded-2xl border-l-4 border-l-calm-rose relative shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                        <div>
+                            <span class="px-2.5 py-0.5 rounded-full bg-calm-softRose text-calm-rose text-xs font-bold">Januari 2025 - Sekarang</span>
+                            <h3 class="font-serif-title text-2xl font-bold text-calm-dark mt-1">Community & Partnership</h3>
+                            <p class="text-sm font-semibold text-calm-rose">Teman Kreativ <span class="text-calm-muted font-normal">(Remote Workers Ecosystem)</span></p>
+                        </div>
+                        <span class="inline-flex items-center gap-1 text-xs text-calm-muted bg-nude-100 px-3 py-1 rounded-full self-start sm:self-center">
+                            <i class="fa-solid fa-laptop-house text-calm-rose"></i> Remote
+                        </span>
+                    </div>
+                    <ul class="space-y-2.5 text-sm text-calm-muted list-disc list-inside leading-relaxed">
+                        <li>
+                            Mengordinasikan berbagai pemangku kepentingan (multistakeholder), termasuk mitra terhubung pemerintah, untuk menyelenggarakan konferensi online nasional bersama <strong class="text-calm-dark">SMESCO Indonesia (LLP-KUKM)</strong> hingga mencapai <strong class="text-calm-dark">500+ peserta terdaftar</strong>.
+                        </li>
+                        <li>
+                            Mewakili Teman Kreativ sebagai pembicara (*speaker*) resmi di event nasional <strong class="text-calm-dark">FEMPI (Festival Mimpi Ibu)</strong>.
+                        </li>
+                        <li>
+                            Mendukung perencanaan dan eksekusi berbagai program webinar bulanan, mengelola logistik acara serta penjadwalan pemateri/kontributor secara rapi.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Role 2: Mamakologi.id -->
+                <div class="glass-card p-6 sm:p-8 rounded-2xl border-l-4 border-l-calm-blue relative shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                        <div>
+                            <span class="px-2.5 py-0.5 rounded-full bg-calm-lightBlue text-calm-blue text-xs font-bold">Mei 2025 - Desember 2025</span>
+                            <h3 class="font-serif-title text-2xl font-bold text-calm-dark mt-1">Community Manager</h3>
+                            <p class="text-sm font-semibold text-calm-blue">Mamakologi.id <span class="text-calm-muted font-normal">(Women Empowerment Community)</span></p>
+                        </div>
+                        <span class="inline-flex items-center gap-1 text-xs text-calm-muted bg-nude-100 px-3 py-1 rounded-full self-start sm:self-center">
+                            <i class="fa-solid fa-laptop-house text-calm-blue"></i> Remote
+                        </span>
+                    </div>
+                    <ul class="space-y-2.5 text-sm text-calm-muted list-disc list-inside leading-relaxed">
+                        <li>
+                            Merancang dan mengimplementasikan SOP & alur kerja internal untuk tim operasional komunitas, menciptakan proses eksekusi harian yang terstruktur, terukur, dan lebih cepat.
+                        </li>
+                        <li>
+                            Mengembangkan program insentif <strong class="text-calm-dark">Member Reward Point</strong> untuk mendorong interaksi aktif antar anggota komunitas.
+                        </li>
+                        <li>
+                            Meningkatkan tingkat partisipasi komunitas sebesar <strong class="text-calm-dark">30% dalam kurun waktu 3 bulan</strong> melalui program interaktif berbasis analisis data.
+                        </li>
+                        <li>
+                            Membangun kemitraan mingguan dengan pemateri pakar (5 program kolaborasi) dan bertindak sebagai penghubung (*liaison*) antara brand dan member.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Role 3: Little Kincik -->
+                <div class="glass-card p-6 sm:p-8 rounded-2xl border-l-4 border-l-amber-600 relative shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                        <div>
+                            <span class="px-2.5 py-0.5 rounded-full bg-amber-100 text-amber-800 text-xs font-bold">September 2024 - November 2024</span>
+                            <h3 class="font-serif-title text-2xl font-bold text-calm-dark mt-1">Social Media Specialist</h3>
+                            <p class="text-sm font-semibold text-amber-800">Teman Kreativ, for Little Kincik <span class="text-calm-muted font-normal">(Kids Fashion Brand)</span></p>
+                        </div>
+                        <span class="inline-flex items-center gap-1 text-xs text-calm-muted bg-nude-100 px-3 py-1 rounded-full self-start sm:self-center">
+                            <i class="fa-solid fa-laptop-house text-amber-700"></i> Remote
+                        </span>
+                    </div>
+                    <ul class="space-y-2.5 text-sm text-calm-muted list-disc list-inside leading-relaxed">
+                        <li>
+                            Menyusun strategi konten selaras dengan KPI brand, berhasil mendorong kenaikan <strong class="text-calm-dark">78% interaksi organik bulanan</strong>.
+                        </li>
+                        <li>
+                            Melakukan riset tren & kompetitor, mengelola copywriting, riset jadwal kalender konten, distribusi, hingga pemantauan performa kampanye.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Role 4: Creative Content Freelance -->
+                <div class="glass-card p-6 sm:p-8 rounded-2xl border-l-4 border-l-stone-400 relative shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                        <div>
+                            <span class="px-2.5 py-0.5 rounded-full bg-stone-200 text-stone-700 text-xs font-bold">Maret 2024 - Juni 2024</span>
+                            <h3 class="font-serif-title text-2xl font-bold text-calm-dark mt-1">Creative Content (Freelance)</h3>
+                            <p class="text-sm font-semibold text-stone-700">Hotel & Fashion Brand Clients</p>
+                        </div>
+                        <span class="inline-flex items-center gap-1 text-xs text-calm-muted bg-nude-100 px-3 py-1 rounded-full self-start sm:self-center">
+                            <i class="fa-solid fa-laptop-house"></i> Remote / Project
+                        </span>
+                    </div>
+                    <ul class="space-y-2.5 text-sm text-calm-muted list-disc list-inside leading-relaxed">
+                        <li>
+                            Membuat konten penceritaan brand (*storytelling*) menggunakan teknik videografi dan editing modern; membangun sistem desain konten Instagram yang konsisten untuk brand pakaian ibu hamil.
+                        </li>
+                        <li>
+                            Mengembangkan materi visual yang menonjolkan fitur unggulan produk dan nilai-nilai (*brand value*) klien.
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12">
+                
+                <!-- Certifications -->
+                <div>
+                    <div class="flex items-center gap-3 mb-8">
+                        <div class="w-10 h-10 rounded-xl bg-calm-softRose text-calm-rose flex items-center justify-center text-lg shadow-sm">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <h2 class="font-serif-title text-2xl font-bold text-calm-dark">Sertifikasi Profesional</h2>
+                    </div>
+
+                    <div class="space-y-4">
+                        <!-- Cert 1 -->
+                        <div class="p-5 rounded-2xl bg-white border border-nude-200 flex items-start gap-4 shadow-sm">
+                            <div class="w-12 h-12 rounded-xl bg-red-50 text-red-600 flex items-center justify-center font-bold text-sm shrink-0">
+                                BNSP
+                            </div>
+                            <div>
+                                <span class="text-xs text-calm-rose font-bold">November 2025</span>
+                                <h4 class="font-bold text-calm-dark text-base mt-0.5">BNSP Certified - Business Management for Digital Marketing</h4>
+                                <p class="text-xs text-calm-muted mt-1">Sertifikasi Standar Kerja Nasional Indonesia untuk Manajemen Bisnis Pemasaran Digital.</p>
+                            </div>
+                        </div>
+
+                        <!-- Cert 2 -->
+                        <div class="p-5 rounded-2xl bg-white border border-nude-200 flex items-start gap-4 shadow-sm">
+                            <div class="w-12 h-12 rounded-xl bg-calm-lightBlue text-calm-blue flex items-center justify-center font-bold text-sm shrink-0">
+                                CM
+                            </div>
+                            <div>
+                                <span class="text-xs text-calm-blue font-bold">Mei - Juli 2025</span>
+                                <h4 class="font-bold text-calm-dark text-base mt-0.5">Community Manager Contributor Program</h4>
+                                <p class="text-xs text-calm-muted mt-1">Mamakologi Community Program untuk pengelolaan dan pengembangan komunitas wanita berbasis pemberdayaan.</p>
+                            </div>
+                        </div>
+
+                        <!-- Cert 3 -->
+                        <div class="p-5 rounded-2xl bg-white border border-nude-200 flex items-start gap-4 shadow-sm">
+                            <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center font-bold text-sm shrink-0">
+                                SMS
+                            </div>
+                            <div>
+                                <span class="text-xs text-amber-700 font-bold">September - November 2024</span>
+                                <h4 class="font-bold text-calm-dark text-base mt-0.5">Social Media Specialist Program</h4>
+                                <p class="text-xs text-calm-muted mt-1">Teman Kreativ Virtual Assistant Startup Business Matching Program.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education & Languages -->
+                <div>
+                    <!-- Education -->
+                    <div class="flex items-center gap-3 mb-8">
+                        <div class="w-10 h-10 rounded-xl bg-calm-lightBlue text-calm-blue flex items-center justify-center text-lg shadow-sm">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <h2 class="font-serif-title text-2xl font-bold text-calm-dark">Pendidikan Akademis</h2>
+                    </div>
+
+                    <div class="p-6 rounded-2xl bg-white border border-nude-200 shadow-sm mb-8">
+                        <span class="text-xs font-bold text-calm-blue">Juli 2008</span>
+                        <h4 class="font-bold text-calm-dark text-lg mt-1">Bachelor of Tourism Management</h4>
+                        <p class="text-sm font-semibold text-calm-rose mt-0.5">Sekolah Tinggi Pariwisata Sahid Jakarta</p>
+                        <p class="text-xs text-calm-muted mt-2 leading-relaxed">
+                            Mempelajari manajemen pelayanan, koordinasi event, komunikasi publik, dan prinsip pengelolaan pemangku kepentingan.
+                        </p>
+                    </div>
+
+                    <!-- Languages -->
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-lg shadow-sm">
+                            <i class="fa-solid fa-language"></i>
+                        </div>
+                        <h2 class="font-serif-title text-2xl font-bold text-calm-dark">Kemampuan Bahasa</h2>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 rounded-xl bg-white border border-nude-200">
+                            <div class="flex items-center justify-between">
+                                <span class="font-bold text-sm text-calm-dark">Bahasa Indonesia</span>
+                                <span class="text-[10px] bg-emerald-100 text-emerald-800 font-semibold px-2 py-0.5 rounded-full">Native</span>
+                            </div>
+                            <div class="w-full bg-nude-100 h-1.5 rounded-full mt-3">
+                                <div class="bg-emerald-500 h-1.5 rounded-full w-full"></div>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-white border border-nude-200">
+                            <div class="flex items-center justify-between">
+                                <span class="font-bold text-sm text-calm-dark">English</span>
+                                <span class="text-[10px] bg-sky-100 text-sky-800 font-semibold px-2 py-0.5 rounded-full">Upper Inter.</span>
+                            </div>
+                            <div class="w-full bg-nude-100 h-1.5 rounded-full mt-3">
+                                <div class="bg-sky-500 h-1.5 rounded-full w-[80%]"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-nude-100 border-t border-nude-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-12 gap-12">
+                
+                <!-- Contact Direct Info -->
+                <div class="md:col-span-5 space-y-6">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-calm-rose">Hubungi Saya</span>
+                    <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-calm-dark">
+                        Mari Berdiskusi & Membangun Proyek Bersama
+                    </h2>
+                    <p class="text-sm text-calm-muted leading-relaxed">
+                        Terbuka untuk posisi penuh waktu remote, konsultasi sistem SOP operasional komunitas, atau kolaborasi manajemen event digital.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <!-- Direct WhatsApp -->
+                        <a href="https://wa.me/6285811622792" target="_blank" class="p-4 rounded-2xl bg-white border border-nude-200 flex items-center gap-4 hover:border-emerald-500 transition-colors group shadow-sm">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-calm-muted">WhatsApp Direct</p>
+                                <p class="font-bold text-calm-dark text-sm">+62 858-1162-2792</p>
+                            </div>
+                        </a>
+
+                        <!-- Email -->
+                        <a href="mailto:chintia.hermana@gmail.com" class="p-4 rounded-2xl bg-white border border-nude-200 flex items-center gap-4 hover:border-calm-rose transition-colors group shadow-sm">
+                            <div class="w-12 h-12 rounded-xl bg-calm-softRose text-calm-rose flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                                <i class="fa-regular fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-calm-muted">Email Resmi</p>
+                                <p class="font-bold text-calm-dark text-sm">chintia.hermana@gmail.com</p>
+                            </div>
+                        </a>
+
+                        <!-- LinkedIn -->
+                        <a href="https://linkedin.com/in/chintiahermana" target="_blank" class="p-4 rounded-2xl bg-white border border-nude-200 flex items-center gap-4 hover:border-blue-600 transition-colors group shadow-sm">
+                            <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-calm-muted">LinkedIn Profile</p>
+                                <p class="font-bold text-calm-dark text-sm">linkedin.com/in/chintiahermana</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Interactive WhatsApp Contact Form -->
+                <div class="md:col-span-7">
+                    <div class="glass-card p-8 rounded-3xl border border-nude-300 shadow-sm">
+                        <h3 class="font-serif-title text-xl font-bold text-calm-dark mb-2">Kirim Pesan Langsung</h3>
+                        <p class="text-xs text-calm-muted mb-6">Isi formulir berikut, dan pesan akan langsung disiapkan untuk dikirim via WhatsApp ke nomor +62 858-1162-2792.</p>
+
+                        <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-calm-dark mb-1">Nama Lengkap</label>
+                                <input type="text" id="senderName" required placeholder="Masukkan nama Anda" class="w-full px-4 py-3 rounded-xl border border-nude-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-calm-rose">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-calm-dark mb-1">Subjek / Perusahaan</label>
+                                <input type="text" id="senderCompany" required placeholder="Contoh: Tawaran Project / Kolaborasi Komunitas" class="w-full px-4 py-3 rounded-xl border border-nude-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-calm-rose">
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold text-calm-dark mb-1">Pesan Anda</label>
+                                <textarea id="senderMessage" rows="4" required placeholder="Tuliskan detail diskusi atau tawaran Anda di sini..." class="w-full px-4 py-3 rounded-xl border border-nude-300 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-calm-rose"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-3.5 rounded-xl bg-calm-dark text-white text-sm font-semibold hover:bg-calm-rose transition-colors flex items-center justify-center gap-2 shadow-md">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                                <span>Kirimkan via WhatsApp</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-calm-dark text-nude-100 text-xs border-t border-nude-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-7 h-7 rounded-full bg-calm-rose text-white flex items-center justify-center font-serif font-bold text-xs">
+                    CH
+                </div>
+                <span>&copy; 2026 Chintia Hermana. All rights reserved.</span>
+            </div>
+            <div class="flex items-center space-x-6">
+                <a href="#hero" class="hover:text-calm-rose transition-colors">Kembali ke Atas <i class="fa-solid fa-arrow-up text-[10px] ml-1"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Preview CV Summary -->
+    <div id="cvModal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="glass-card bg-white max-w-2xl w-full rounded-3xl p-6 sm:p-8 max-h-[90vh] overflow-y-auto relative shadow-2xl">
+            <button onclick="closeCVModal()" class="absolute top-6 right-6 w-9 h-9 rounded-full bg-nude-100 text-calm-dark flex items-center justify-center hover:bg-calm-rose hover:text-white transition-colors">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <div class="text-center pb-6 border-b border-nude-200">
+                <h3 class="font-serif-title text-2xl font-bold text-calm-dark">Ringkasan CV - Chintia Hermana</h3>
+                <p class="text-xs text-calm-rose font-semibold mt-1">Community Manager | Community Engagement & Operations</p>
+            </div>
+
+            <div class="py-6 space-y-4 text-xs leading-relaxed text-calm-dark">
+                <div>
+                    <h4 class="font-bold text-sm text-calm-dark uppercase tracking-wider mb-1">Ringkasan Profesional</h4>
+                    <p class="text-calm-muted">
+                        Community Manager dengan pengalaman kerja *remote* di bidang *community engagement*, koordinasi kemitraan, dan eksekusi media sosial pada ekosistem digital & UMKM Indonesia. Rekam jejak mencakup pertumbuhan komunitas 30% dalam 3 bulan, mengordinasikan konferensi nasional 500+ peserta dengan SMESCO Indonesia (LLP-KUKM), serta merancang SOP & alur kerja internal.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-sm text-calm-dark uppercase tracking-wider mb-1">Kontak Resmi</h4>
+                    <p class="text-calm-muted">Telepon/WA: +62 858-1162-2792 | Email: chintia.hermana@gmail.com | LinkedIn: chintiahermana</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-sm text-calm-dark uppercase tracking-wider mb-1">Lisensi & Sertifikasi Utama</h4>
+                    <ul class="list-disc list-inside text-calm-muted space-y-1">
+                        <li>BNSP Certified - Business Management for Digital Marketing (Nov 2025)</li>
+                        <li>Community Manager Contributor Program - Mamakologi Community (2025)</li>
+                        <li>Social Media Specialist Program - Teman Kreativ Startup Business Matching (2024)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-4 border-t border-nude-200 flex flex-col sm:flex-row gap-3">
+                <a href="https://wa.me/6285811622792?text=Halo%20Chintia,%20saya%20tertarik%20dengan%20CV%20dan%20pengalaman%20Anda." target="_blank" class="flex-1 py-3 rounded-xl bg-calm-rose text-white text-xs font-bold text-center hover:bg-nude-600 transition-colors shadow-sm">
+                    <i class="fa-brands fa-whatsapp mr-1.5"></i> Hubungi untuk File Lengkap
+                </a>
+                <button onclick="closeCVModal()" class="py-3 px-6 rounded-xl bg-nude-100 text-calm-dark text-xs font-semibold hover:bg-nude-200 transition-colors">
+                    Tutup
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Actions -->
+    <script>
+        // Toggle Mobile Navigation Drawer
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const icon = document.getElementById('menuIcon');
+            menu.classList.toggle('hidden');
+            if (menu.classList.contains('hidden')) {
+                icon.className = 'fa-solid fa-bars text-xl';
+            } else {
+                icon.className = 'fa-solid fa-xmark text-xl';
+            }
+        }
+
+        // Open & Close CV Preview Modal
+        function openCVModal() {
+            document.getElementById('cvModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCVModal() {
+            document.getElementById('cvModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Language Switcher Toggle
+        let currentLang = 'ID';
+        function toggleLanguage() {
+            const badge = document.querySelector('[data-id="hero-badge"]');
+            const desc = document.querySelector('[data-id="hero-desc"]');
+            const label = document.getElementById('langLabel');
+
+            if (currentLang === 'ID') {
+                currentLang = 'EN';
+                label.innerText = 'EN / ID';
+                if (badge) badge.innerText = 'Open for Remote & Project Collaboration';
+                if (desc) {
+                    desc.innerHTML = 'Hello! I am <strong class="text-calm-dark font-semibold">Chintia Hermana</strong>, a <em>Community Manager & Operations Specialist</em>. Focused on digital ecosystem growth, strategic partnerships, structured SOP design, and impact-driven content strategies.';
+                }
+            } else {
+                currentLang = 'ID';
+                label.innerText = 'ID / EN';
+                if (badge) badge.innerText = 'Open for Remote & Project Collaboration';
+                if (desc) {
+                    desc.innerHTML = 'Halo! Saya <strong class="text-calm-dark font-semibold">Chintia Hermana</strong>, seorang <em>Community Manager & Operations Specialist</em>. Berfokus pada pengembangan ekosistem digital, koordinasi kemitraan strategis, perancangan SOP terstruktur, dan strategi konten berorientasi dampak.';
+                }
+            }
+        }
+
+        // Handle Form Submission Direct to WhatsApp (+62 858-1162-2792)
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('senderName').value;
+            const company = document.getElementById('senderCompany').value;
+            const message = document.getElementById('senderMessage').value;
+
+            const text = `Halo Chintia,%0A%0ANama Saya: ${encodeURIComponent(name)}%0ASubjek/Perusahaan: ${encodeURIComponent(company)}%0APesan: ${encodeURIComponent(message)}`;
+            window.open(`https://wa.me/6285811622792?text=${text}`, '_blank');
+        }
+    </script>
+</body>
+</html>
